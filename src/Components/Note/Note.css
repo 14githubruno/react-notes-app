@@ -1,0 +1,71 @@
+.form {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form textarea {
+  resize: none;
+  outline: none;
+  width: 15rem;
+  padding: 0.2rem;
+}
+
+.form textarea:nth-of-type(2) {
+  border-top: none;
+  border-bottom: none;
+  height: 5rem;
+}
+
+.form button {
+  cursor: pointer;
+  width: 15rem;
+}
+
+/*  */
+.notes-container {
+  overflow: auto;
+  display: flex;
+  background-color: rgb(250, 208, 208);
+  margin-top: 1rem;
+}
+
+.notes-container .note {
+  border: 0.1rem solid rgb(0, 0, 0);
+  height: 10rem;
+  flex: 0 0 15rem;
+  margin: 1rem;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
+
+.note textarea {
+  width: 100%;
+  resize: none;
+  outline: none;
+  border-right: none;
+  border-left: none;
+  padding: 0.2rem;
+}
+
+.note textarea:nth-of-type(1) {
+  border: none;
+}
+
+.note textarea:nth-of-type(2) {
+  background: rgb(242, 242, 227);
+  height: 5rem;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+
+.buttons {
+  position: absolute;
+  bottom: 0.3rem;
+  right: 0;
+}
+
+.buttons button {
+  cursor: pointer;
+  margin-right: 0.3rem;
+}
