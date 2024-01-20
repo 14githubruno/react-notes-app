@@ -1,7 +1,7 @@
 import "./App.css";
 //
-import Header from "./components/Header/Header";
-import Notes from "./components/NotesApp/Notes";
+import Header from "./Components/Header/Header";
+import Notes from "./Components/NotesApp/Notes";
 
 function App() {
   return (
