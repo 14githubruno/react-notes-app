@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { v4 as id } from "uuid";
-import "./Note.css";
+import "./Notes.css";
+import EditableNote from "./EditableNote/EditableNote";
+import FinalNote from "./FinalNote/FinalNote";
 
-const Note = () => {
+const Notes = () => {
   // object waiting for inputs values
   const [inputValue, setInputValue] = useState({
     id: "",
@@ -16,7 +18,6 @@ const Note = () => {
   // empty variable waiting for the object to be edited
   const [editNote, setEditNote] = useState(null);
 
-  //
   // function to pass input values to the object
   const handleUserInput = (e) => {
     setInputValue({
@@ -106,7 +107,7 @@ const Note = () => {
           return (
             <div key={note.id} className="note">
               {editNote?.id !== note.id ? (
-                <PrototypeNote
+                <FinalNote
                   inputTitle={note.inputTitle}
                   inputText={note.inputText}
                   clickEdit={() => updateNote(note)}
@@ -130,62 +131,4 @@ const Note = () => {
   );
 };
 
-//
-const PrototypeNote = ({
-  inputTitle,
-  inputText,
-  readOnly,
-  clickDelete,
-  clickEdit,
-}) => {
-  return (
-    <div>
-      <textarea
-        readOnly={readOnly}
-        value={inputTitle}
-        name="inputTitle"
-      ></textarea>
-      <textarea
-        readOnly={readOnly}
-        value={inputText}
-        name="inputText"
-      ></textarea>
-      <div className="buttons">
-        <button onClick={clickEdit}>edit</button>
-        <button onClick={clickDelete}>delete</button>
-      </div>
-    </div>
-  );
-};
-
-const EditableNote = ({
-  inputTitle,
-  inputText,
-  readOnly,
-  clickDelete,
-  clickSaveChanges,
-  changeUpdateValues,
-}) => {
-  return (
-    <div>
-      <textarea
-        onChange={changeUpdateValues}
-        readOnly={readOnly}
-        value={inputTitle}
-        name="inputTitle"
-      ></textarea>
-      <textarea
-        onChange={changeUpdateValues}
-        readOnly={readOnly}
-        value={inputText}
-        name="inputText"
-      ></textarea>
-      <div className="buttons">
-        <button onClick={clickSaveChanges}>save</button>
-        <button onClick={clickDelete}>delete</button>
-      </div>
-    </div>
-  );
-};
-
-export default Note;
+export default Notes;
